@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugoland & JiaJialand</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: red;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 10;
+            position: relative;
+        }
+
+        header img {
+            width: 471px;
+            height: 587px;
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), rgba(255, 0, 0, 0.6));
+            z-index: 1;
+            transform: rotate(30deg);
+            opacity: 0.7;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            border-top: 2px solid red;
+            border-bottom: 2px solid red;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: red;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: red;
+            transition: width 0.3s;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 30px;
+            width: calc(33% - 40px);
+            min-width: 300px;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+            color: red;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Hugoland & JiaJialand</h1>
+        <img src="map.jpg" alt="Map of Hugoland & JiaJialand">
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#history">History</a>
+        <a href="#sports">Sports</a>
+        <a href="#business">Business</a>
+        <a href="#travel">Travel Guide</a>
+        <a href="#events">Events</a>
+    </nav>
+
+    <div class="container">
+        <div class="card" id="about">
+            <h2>About Hugoland & JiaJialand</h2>
+            <p>Hugoland and JiaJialand are unique, dynamic nations with a rich history, diverse culture, and innovative spirit. Together, they form a powerful alliance that combines the best of both worlds.</p>
+        </div>
+
+        <div class="card" id="history">
+            <h2>History</h2>
+            <p>Hugoland was founded in 1846 and recognized in 1913. It fought a great war in 2013, expanding its territory significantly. In 2024, it joined forces with JiaJialand to share its inventions, leading to a new era of collaboration and growth.</p>
+        </div>
+
+        <div class="card" id="sports">
+            <h2>Sports</h2>
+            <p>The Hugolympics are a highlight in Hugoland, featuring unique sports such as pencil throw, eraser put, and rulering. The games are held annually in Pershilia, Salavila, and Magel, attracting top athletes from around the world.</p>
+        </div>
+
+        <div class="card" id="business">
+            <h2>Business</h2>
+            <p>Hugoland and JiaJialand are known for their innovative technologies, including the hoverboard, Level 8 A.I, worldwide emails, and the flying car. These inventions have positioned them as leaders in the global market.</p>
+        </div>
+
+        <div class="card" id="travel">
+            <h2>Travel Guide</h2>
+            <p>Explore the best of Hugoland & JiaJialand with our travel tips and guides. Visit top destinations, enjoy local cuisine, and take part in exciting events throughout the year.</p>
+            <ul>
+                <li>Best places to visit: Thaxing, Magel, Pershilia, Salavila, and more.</li>
+                <li>Best airlines: Air Hugo, JiaJiair, Salvalila Airlines, Kingia Flies.</li>
+                <li>Travel tips: Always bring a Hugo card, and never miss out on street food!</li>
+            </ul>
+        </div>
+
+        <div class="card" id="events">
+            <h2>Events</h2>
+            <p>There's always something happening in Hugoland & JiaJialand! From Hugo New Year to the Star Nights of Hugoland, and National Ice Cream Day, there's an event for everyone.</p>
+            <ul>
+                <li>Jan 1 - Hugo New Year!</li>
+                <li>Feb 1-29 - Star Nights of Hugoland</li>
+                <li>Mar 18 - National Ice Cream Day</li>
+                <li>Apr 26 - Annual Pershilia Marathon</li>
+                <li>And many more exciting events throughout the year!</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hugoland & JiaJialand | <a href="portfolio.html">Return to Portfolio</a></p>
+    </footer>
+</body>
+</html>

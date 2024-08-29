@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KongCodes</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f7f7;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: red;
+            transform: scale(1.05);
+        }
+
+        header h1 {
+            font-size: 4.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.6rem;
+            margin: 20px 0 0;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        section:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: red;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        #explore {
+            background-color: #f9f9f9;
+        }
+
+        #places-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            color: red;
+            border: 2px solid red;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin: 10px 0 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: #f4f4f4;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design Enhancements */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading Indicator */
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            color: red;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .btn:focus, .card:focus {
+            outline: 3px solid red;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#request">Request</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to KongCodes</h1>
+        <p>Where fictional places meet</p>
+    </header>
+
+    <section id="about">
+        <h2>About the Developer</h2>
+        <p>Short description about me. I'm passionate about creating amazing websites for fictional places.</p>
+    </section>
+
+    <section id="explore">
+        <h2>Explore the Places</h2>
+        <div id="places-container">
+            <!-- Example card with data attributes -->
+            <div class="card" data-url="hugoland&jiajialand.html">
+                <h3>Hugoland</h3>
+                <p>A brief description of Hugoland.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="request">
+        <h2>Request a Website</h2>
+        <a href="https://forms.gle/UWcBSXWS2RGr8WCw9" class="btn" target="_blank">Request Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 KongCodes. All rights reserved.>Visit KongCodes</p>
+    </footer>
+
+    <!-- Loading Indicator -->
+    <div id="loading">Loading...</div>
+
+    <script>
+        // Function to show loading indicator
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        // Function to hide loading indicator
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        // Function to handle card clicks
+        function handleCardClick(event) {
+            const url = event.currentTarget.dataset.url;
+            if (url) {
+                showLoading();
+                setTimeout(() => {
+                    hideLoading();
+                    window.location.href = url; // Redirect to the specified HTML file
+                }, 500); // Simulate loading delay
+            }
+        }
+
+        // Add click event listeners to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', handleCardClick);
+        });
+    </script>
+</body>
+</html>
